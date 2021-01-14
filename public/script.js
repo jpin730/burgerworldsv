@@ -1,7 +1,3 @@
-var navbarList = document.getElementById("navbar-list");
-var menuSection = document.getElementById("menu-sections");
-var fragment = document.createDocumentFragment();
-
 const menuItems = [
     { name: "American Classic" },
     { name: "Mexican Power" },
@@ -11,26 +7,45 @@ const menuItems = [
     { name: "La Brazileña" }
 ];
 
-// <section id="american-classic" class="p-section">
-//    <div class="container position-relative">
-//        <img src="/public/img/menu/americanclassic.jpg" alt="American Classic Burger" class="w-100">
-//        <div class="vignette"></div>
-//    </div>
-// </div></section>
+var navbarList = document.getElementById("navbar-list");
+var menuSection = document.getElementById("menu-sections");
+var navbarFragment = document.createDocumentFragment();
+var menuSectionFragment = document.createDocumentFragment();
 
-menuItems.forEach(function (item) {
-        // Navbar List
-        let a = document.createElement("a");
+function getNavbarLI(item, id) {
+    let a = document.createElement("a");
     let li = document.createElement("li");
     a.classList.add("nav-link", "text-center", "p-4");
     a.innerHTML = item.name;
-    a.href = "#" + item.name.toLowerCase().replace(" ", "-");
+    a.href = "#" + id;
     li.appendChild(a);
     li.classList.add("nav-item", "active");
-    fragment.appendChild(li);
+    return li;
+}
 
-    // Menu Section
+function getMenuSection(item, id) {
+    let img = document.createElement("img");
+    let divVignette = document.createElement("div");
+    let divContainer = document.createElement("div");
     let section = document.createElement("section");
+    img.src = "/public/img/menu/" + item.name.toLowerCase().replace(" ", "") + ".jpg";
+    img.alt = item.name + "Burger";
+    img.classList.add("w-100");
+    divVignette.classList.add("vignette");
+    divContainer.appendChild(img);
+    divContainer.appendChild(divVignette);
+    divContainer.classList.add("container", "position-relative");
+    section.appendChild(divContainer);
+    section.classList.add("p-section");
+    section.id = id;
+    return section
+}
+
+menuItems.forEach(function (item) {
+    let id = item.name.toLowerCase().replace(" ", "-");
+    navbarFragment.appendChild(getNavbarLI(item, id));
+    menuSectionFragment.appendChild(getMenuSection(item, id));
 });
 
-navbarList.appendChild(fragment);
+navbarList.appendChild(navbarFragment);
+menuSection.appendChild(menuSectionFragment)
