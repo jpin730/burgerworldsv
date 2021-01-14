@@ -28,7 +28,7 @@ function getMenuSection(item, id) {
     let divVignette = document.createElement("div");
     let divContainer = document.createElement("div");
     let section = document.createElement("section");
-    img.src = "/public/img/menu/" + item.name.toLowerCase().replace(" ", "") + ".jpg";
+    img.src = "img/menu/" + item.name.toLowerCase().replace(" ", "") + ".jpg";
     img.alt = item.name + "Burger";
     img.classList.add("w-100");
     divVignette.classList.add("vignette");
