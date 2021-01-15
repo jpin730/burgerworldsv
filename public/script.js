@@ -4,7 +4,9 @@ const menuItems = [
     { name: "La Boluda" },
     { name: "La Cubana" },
     { name: "La Panafish" },
-    { name: "La Brazileña" }
+    { name: "La Brazileña" },
+    { name: "La Caraqueña" },
+    { name: "Parcera Suculenta" }
 ];
 
 var navbarList = document.getElementById("navbar-list");
