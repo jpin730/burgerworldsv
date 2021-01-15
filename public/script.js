@@ -25,18 +25,12 @@ function getNavbarLI(item, id) {
 
 function getMenuSection(item, id) {
     let img = document.createElement("img");
-    let divVignette = document.createElement("div");
-    let divContainer = document.createElement("div");
     let section = document.createElement("section");
     img.src = "img/menu/" + item.name.toLowerCase().replace(" ", "") + ".jpg";
     img.alt = item.name + "Burger";
-    img.classList.add("w-100");
-    divVignette.classList.add("vignette");
-    divContainer.appendChild(img);
-    divContainer.appendChild(divVignette);
-    divContainer.classList.add("container", "position-relative");
-    section.appendChild(divContainer);
-    section.classList.add("p-section");
+    img.classList.add("menu-item-img", "rounded-lg");
+    section.appendChild(img);
+    section.classList.add("p-section", "min-vh-100", "d-flex", "align-items-center");
     section.id = id;
     return section
 }
