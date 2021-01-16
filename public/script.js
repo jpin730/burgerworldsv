@@ -6,7 +6,9 @@ const menuItems = [
     { name: "La Panafish" },
     { name: "La Brazileña" },
     { name: "La Caraqueña" },
-    { name: "Parcera Suculenta" }
+    { name: "Parcera Suculenta" },
+    { name: "La Peruana" },
+    { name: "La Salvadoreña" }
 ];
 
 var navbarList = document.getElementById("navbar-list");
@@ -17,7 +19,7 @@ var menuSectionFragment = document.createDocumentFragment();
 function getNavbarLI(item, id) {
     let a = document.createElement("a");
     let li = document.createElement("li");
-    a.classList.add("nav-link", "text-center", "p-4");
+    a.classList.add("nav-link", "text-center", "p-3");
     a.innerHTML = item.name;
     a.href = "#" + id;
     li.appendChild(a);

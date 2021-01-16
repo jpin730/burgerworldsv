@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 h1 {
     font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 h1 span {
@@ -11,7 +18,7 @@ h1 span {
 }
 
 .bg-dark {
-    background-color: #222!important;
+    background-color: #111!important;
 }
 
 .p-section {
@@ -24,6 +31,21 @@ h1 span {
 
 .menu-item-img {
     width: 100%;
+}
+
+.navbar-brand h1, .nav-link {
+    transition: all 300ms;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+}
+
+.navbar-brand:hover h1, .nav-link:hover {
+    color: #f8cd42!important;
+}
+
+.bg-pattern {
+    background-image: url("img/bg-patern.png");
 }
 
 @media (min-width: 425px) {
