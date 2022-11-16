@@ -2,4 +2,4 @@
 
 A static page for show the menu of a burger restaurant.
 
-[Deploy](https://jpin730.github.io/burgerworldsv/)
+Deployment: [https://jpin730.github.io/burgerworldsv/](https://jpin730.github.io/burgerworldsv/)
